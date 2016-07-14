@@ -409,10 +409,7 @@ public class BaseNoGui {
     }
 
     BaseNoGui.initPackages();
-
-    // refresh the serial port names after loading all packages
-    BaseNoGui.getDiscoveryManager().getSerialDiscoverer().forceRefresh();
-
+    
     // Setup board-dependent variables.
     onBoardOrPortChange();
 

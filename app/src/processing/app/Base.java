@@ -54,6 +54,7 @@ import processing.app.syntax.PdeKeywords;
 import processing.app.syntax.SketchTextAreaDefaultInputMap;
 import processing.app.tools.MenuScroller;
 import processing.app.tools.ZipDeflater;
+import processing.app.MfeMonitor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -122,6 +123,8 @@ public class Base {
   private PdeKeywords pdeKeywords;
   private final List<JMenuItem> recentSketchesMenuItems;
 
+  public MfeMonitor mfeMonitor;
+  
   static public void main(String args[]) throws Exception {
     System.setProperty("awt.useSystemAAFontSettings", "on");
     System.setProperty("swing.aatext", "true");
@@ -296,7 +299,8 @@ public class Base {
     splashScreenHelper.splashText(tr("Preparing boards..."));
     rebuildBoardsMenu();
     rebuildProgrammerMenu();
-
+    mfeMonitor = MfeMonitor.getMonitor();
+    
     // Setup board-dependent variables.
     onBoardOrPortChange();
 
@@ -323,7 +327,7 @@ public class Base {
           e.printStackTrace();
         }
       }
-
+      
       boolean showEditor = parser.isGuiMode();
       if (!parser.isForceSavePrefs())
         PreferencesData.setDoSave(showEditor);

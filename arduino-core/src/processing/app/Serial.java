@@ -184,7 +184,7 @@ public class Serial implements SerialPortEventListener {
   }
 
 
-  public void write(byte bytes[]) {
+  private void write(byte bytes[]) {
     try {
       port.writeBytes(bytes);
     } catch (SerialPortException e) {

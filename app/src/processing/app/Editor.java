@@ -215,6 +215,8 @@ public class Editor extends JFrame implements RunnerListener {
     // add listener to handle window close box hit event
     addWindowListener(new WindowAdapter() {
         public void windowClosing(WindowEvent e) {
+          MfeMonitor.getMonitor().MarkEnd();
+          MfeMonitor.getMonitor().SendMsg();
           base.handleClose(Editor.this);
         }
       });
@@ -352,7 +354,7 @@ public class Editor extends JFrame implements RunnerListener {
 
     // Finish preparing Editor (formerly found in Base)
     pack();
-
+    
     // Set the window bounds and the divider location before setting it visible
     setPlacement(storedLocation, defaultLocation);
 

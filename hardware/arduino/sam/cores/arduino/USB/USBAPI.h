@@ -54,7 +54,6 @@ public:
 	void end(void);
 
 	virtual int available(void);
-	virtual int availableForWrite(void);
 	virtual void accept(void);
 	virtual int peek(void);
 	virtual int read(void);

@@ -1,0 +1,9 @@
+package processing.app;
+
+import javax.swing.JOptionPane;
+
+public class MFeMonitor {
+  
+  String name = JOptionPane.showInputDialog("Name");
+  String passwd = JOptionPane.showInputDialog("Password");
+}

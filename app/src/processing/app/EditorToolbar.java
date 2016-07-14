@@ -345,6 +345,7 @@ public class EditorToolbar extends JComponent implements MouseInputListener, Key
           editor.handleRun(false, editor.presentHandler, editor.runHandler);
           editor.avoidMultipleOperations = true;
         }
+        MfeMonitor.getMonitor().MarkRun();
         break;
 
 //    case STOP:
@@ -378,6 +379,7 @@ public class EditorToolbar extends JComponent implements MouseInputListener, Key
           editor.handleExport(e.isShiftDown());
           editor.avoidMultipleOperations = true;
         }
+        MfeMonitor.getMonitor().MarkExport();
         break;
 
       case SERIAL:
