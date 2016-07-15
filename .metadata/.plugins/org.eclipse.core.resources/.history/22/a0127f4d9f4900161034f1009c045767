@@ -1,0 +1,17 @@
+
+
+
+
+
+public class Server {
+	public static void main(String args[]) {
+//		MfeMonitor.getMonitor();
+//		while(true);
+		
+		HttpRequest.sendGet("127.0.0.1:8000/mfe", null);
+//		HttpRequest.sendPost("127.0.0.1:8000", param)
+		
+		
+		
+	}
+}
