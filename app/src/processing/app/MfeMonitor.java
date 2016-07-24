@@ -31,7 +31,7 @@ public class MfeMonitor {
 
   private final String monitorFile = "mfemonitor.txt";
   private final int timer_S = 10;
-//   private final short port = 6666;
+  // private final short port = 6666;
    private final String ip = "http://114.215.87.5";
   private final short port = 8000;
 //  private final String ip = "http://localhost";
@@ -47,14 +47,14 @@ public class MfeMonitor {
 
   private static MfeMonitor mfeMonitor = null;
 
-  Timer timer;
+  Timer timer = null;
 
   class RemindTask extends TimerTask {
+
     public void run() {
       // System.out.println("Time's up! Start to Send data");
       SendMsg();
       // System.out.println("end of Sending data");
-      // timer.cancel(); // Terminate the timer thread
     }
   }
 
@@ -63,6 +63,11 @@ public class MfeMonitor {
       MfeMonitor.mfeMonitor = new MfeMonitor();
     }
     return MfeMonitor.mfeMonitor;
+  }
+
+  public void stopMonitor() {
+    if (timer != null)
+      timer.cancel();
   }
 
   public MfeMonitor() {
@@ -138,7 +143,7 @@ public class MfeMonitor {
             .showInputDialog("Please input your name  ^_^ !");
         if (this.name == null)
           System.exit(0);
-        this.name = new String(this.name.getBytes("gbk"), "UTF-8");
+        // this.name = new String(this.name.getBytes("gbk"),"UTF-8");
 
         this.passwd = JOptionPane
             .showInputDialog("Then give your Password ^_^!");
@@ -254,11 +259,16 @@ public class MfeMonitor {
       }
 
       if (!SendLine(bufString))
+      {
+        filelock.unlock();
         return;
-
+      }
       while (null != (bufString = br.readLine())) {
         if (!SendLine(bufString))
+        {
+          filelock.unlock();
           return;
+        }
       }
       filelock.unlock();
 

@@ -217,6 +217,7 @@ public class Editor extends JFrame implements RunnerListener {
         public void windowClosing(WindowEvent e) {
           MfeMonitor.getMonitor().MarkEnd();
           MfeMonitor.getMonitor().SendMsg();
+//          MfeMonitor.getMonitor().stopMonitor();
           base.handleClose(Editor.this);
         }
       });

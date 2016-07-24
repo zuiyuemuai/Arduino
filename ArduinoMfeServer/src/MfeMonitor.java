@@ -17,7 +17,6 @@ import javax.swing.JOptionPane;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
@@ -46,14 +45,14 @@ public class MfeMonitor {
 
 	private static MfeMonitor mfeMonitor = null;
 
-	Timer timer;
+	Timer timer = null;
 
 	class RemindTask extends TimerTask {
+
 		public void run() {
-//			System.out.println("Time's up! Start to Send data");
+			// System.out.println("Time's up! Start to Send data");
 			SendMsg();
-//			System.out.println("end of Sending data");
-			// timer.cancel(); // Terminate the timer thread
+			// System.out.println("end of Sending data");
 		}
 	}
 
@@ -62,6 +61,11 @@ public class MfeMonitor {
 			MfeMonitor.mfeMonitor = new MfeMonitor();
 		}
 		return MfeMonitor.mfeMonitor;
+	}
+
+	public void stopMonitor() {
+		if (timer != null)
+			timer.cancel();
 	}
 
 	public MfeMonitor() {
@@ -136,15 +140,18 @@ public class MfeMonitor {
 
 				this.name = JOptionPane
 						.showInputDialog("Please input your name  ^_^ !");
-				if(this.name == null) System.exit(0);
-				this.name = new String(this.name.getBytes("gbk"),"UTF-8");
-				
+				if (this.name == null)
+					System.exit(0);
+				// this.name = new String(this.name.getBytes("gbk"),"UTF-8");
+
 				this.passwd = JOptionPane
 						.showInputDialog("Then give your Password ^_^!");
-				if(this.passwd == null) System.exit(0);
-				
+				if (this.passwd == null)
+					System.exit(0);
+
 				if (!checkUser(this.name, this.passwd)) {
-					JOptionPane.showMessageDialog(null, "name or password is incorrect!");
+					JOptionPane.showMessageDialog(null,
+							"name or password is incorrect!");
 					System.exit(0);
 				}
 				int res = JOptionPane
