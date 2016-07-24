@@ -32,9 +32,9 @@ public class MfeMonitor {
   private final String monitorFile = "mfemonitor.txt";
   private final int timer_S = 10;
   // private final short port = 6666;
-   private final String ip = "http://114.215.87.5";
-  private final short port = 8002;
-//  private final String ip = "http://localhost";
+//   private final String ip = "http://114.215.87.5";
+  private final short port = 8000;
+  private final String ip = "http://localhost";
   private final String url = ip + ":" + port + "/mfe/";
 
   private final String url_monitor_post = url + "monitor/";
