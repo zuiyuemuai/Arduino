@@ -25,6 +25,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 
+import processing.app.InputStreamUtils;
+import processing.app.MfeMonitor;
+import processing.app.MfeMonitor.RemindTask;
+
 public class MfeMonitor {
 
 	  private final String monitorFile = "mfemonitor.txt";

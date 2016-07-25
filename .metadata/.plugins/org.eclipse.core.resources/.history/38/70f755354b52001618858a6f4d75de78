@@ -191,7 +191,8 @@ public class MfeMonitor {
   }
 
   private void println(String line) {
-    File tempFile = getFile();
+    File tempFile = new File(System.getProperty("java.io.tmpdir"),
+        this.monitorFile);
     try {
       if (!tempFile.exists())
         return;

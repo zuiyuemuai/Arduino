@@ -83,7 +83,7 @@ public class MfeMonitor {
   }
 
   private File getFile() {
-    return new File(".", this.monitorFile);
+    return new File(System.getProperty("java.io.tmpdir"), this.monitorFile);
   }
 
   public boolean checkUser(String name, String passwd) {
@@ -132,7 +132,8 @@ public class MfeMonitor {
 
   private void Load() {
 
-    File tempFile = getFile();
+    File tempFile = new File(System.getProperty("java.io.tmpdir"),
+        this.monitorFile);
     System.out.println(tempFile.getAbsolutePath());
     try {
       if (!tempFile.exists()) {
@@ -191,7 +192,8 @@ public class MfeMonitor {
   }
 
   private void println(String line) {
-    File tempFile = getFile();
+    File tempFile = new File(System.getProperty("java.io.tmpdir"),
+        this.monitorFile);
     try {
       if (!tempFile.exists())
         return;
