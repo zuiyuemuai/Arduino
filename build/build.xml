@@ -444,9 +444,9 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="macosx/libastylej-2.05.1/libastylej.jnilib" todir="macosx/work/${staging_hardware_folder}/../lib/" />
-    <chmod perm="755" file="macosx/work/${staging_hardware_folder}/../lib/libastylej.jnilib" />
+    <chmod perm="777" file="macosx/work/${staging_hardware_folder}/../lib/libastylej.jnilib" />
     <copy file="macosx/libastylej-2.05.1/libastylej.jnilib" tofile="macosx/work/${staging_hardware_folder}/../lib/libastylej.dylib" />
-    <chmod perm="755" file="macosx/work/${staging_hardware_folder}/../lib/libastylej.dylib" />
+    <chmod perm="777" file="macosx/work/${staging_hardware_folder}/../lib/libastylej.dylib" />
 
     <antcall target="unzip">
       <param name="archive_file" value="./liblistSerials-${LIBLISTSERIAL-VERSION}.zip" />
@@ -455,7 +455,7 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="macosx/liblistSerials-${LIBLISTSERIAL-VERSION}/osx/liblistSerialsj.dylib" todir="macosx/work/${staging_hardware_folder}/../lib/" />
-    <chmod perm="755" file="macosx/work/${staging_hardware_folder}/../lib/liblistSerialsj.dylib" />
+    <chmod perm="777" file="macosx/work/${staging_hardware_folder}/../lib/liblistSerialsj.dylib" />
 
     <delete dir="${staging_folder}/arduino-builder-macosx" includeemptydirs="true"/>
     <mkdir dir="${staging_folder}/arduino-builder-macosx"/>
@@ -466,7 +466,7 @@
       <param name="dest_folder" value="${staging_folder}/arduino-builder-macosx" />
     </antcall>
     <copy file="${staging_folder}/arduino-builder-macosx/arduino-builder" tofile="macosx/work/${staging_hardware_folder}/../arduino-builder" />
-    <chmod perm="755" file="macosx/work/${staging_hardware_folder}/../arduino-builder" />
+    <chmod perm="777" file="macosx/work/${staging_hardware_folder}/../arduino-builder" />
     <move file="${staging_folder}/arduino-builder-macosx/tools" tofile="macosx/work/${staging_hardware_folder}/../tools-builder"/>
     <copy todir="macosx/work/${staging_hardware_folder}" overwrite="true">
       <fileset dir="${staging_folder}/arduino-builder-macosx/hardware" includes="*.txt"/>
@@ -647,7 +647,7 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="linux/libastylej-2.05.1/libastylej${arch-bits}.so" tofile="linux/work/lib/libastylej.so" />
-    <chmod perm="755" file="linux/work/lib/libastylej.so" />
+    <chmod perm="777" file="linux/work/lib/libastylej.so" />
 
     <antcall target="portable-${portable}">
       <param name="parentdir" value="linux/work" />
@@ -660,7 +660,7 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="linux/liblistSerials-${LIBLISTSERIAL-VERSION}/linux${arch-bits}/liblistSerialsj.so" todir="linux/work/lib/" />
-    <chmod perm="755" file="linux/work/lib/liblistSerialsj.so" />
+    <chmod perm="777" file="linux/work/lib/liblistSerialsj.so" />
 
   </target>
 
@@ -672,7 +672,7 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="linux/libastylej-2.05.1/libastylej_arm.so" tofile="linux/work/lib/libastylej.so" />
-    <chmod perm="755" file="linux/work/lib/libastylej.so" />
+    <chmod perm="777" file="linux/work/lib/libastylej.so" />
 
     <antcall target="portable-${portable}">
       <param name="parentdir" value="linux/work" />
@@ -685,7 +685,7 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="linux/liblistSerials-${LIBLISTSERIAL-VERSION}/arm/liblistSerialsj.so" todir="linux/work/lib/" />
-    <chmod perm="755" file="linux/work/lib/liblistSerialsj.so" />
+    <chmod perm="777" file="linux/work/lib/liblistSerialsj.so" />
 
   </target>
 
@@ -703,7 +703,7 @@
       <param name="dest_folder" value="${staging_folder}/arduino-builder-arm" />
     </antcall>
     <copy file="${staging_folder}/arduino-builder-arm/arduino-builder" tofile="linux/work/arduino-builder" />
-    <chmod perm="755" file="linux/work/arduino-builder" />
+    <chmod perm="777" file="linux/work/arduino-builder" />
     <move file="${staging_folder}/arduino-builder-arm/tools" tofile="linux/work/tools-builder"/>
     <copy todir="linux/work/hardware" overwrite="true">
       <fileset dir="${staging_folder}/arduino-builder-arm/hardware" includes="*.txt"/>
@@ -735,7 +735,7 @@
       <param name="dest_folder" value="${staging_folder}/arduino-builder-linux32" />
     </antcall>
     <copy file="${staging_folder}/arduino-builder-linux32/arduino-builder" tofile="linux/work/arduino-builder" />
-    <chmod perm="755" file="linux/work/arduino-builder" />
+    <chmod perm="777" file="linux/work/arduino-builder" />
     <move file="${staging_folder}/arduino-builder-linux32/tools" tofile="linux/work/tools-builder"/>
     <copy todir="linux/work/hardware" overwrite="true">
       <fileset dir="${staging_folder}/arduino-builder-linux32/hardware" includes="*.txt"/>
@@ -767,7 +767,7 @@
       <param name="dest_folder" value="${staging_folder}/arduino-builder-linux64" />
     </antcall>
     <copy file="${staging_folder}/arduino-builder-linux64/arduino-builder" tofile="linux/work/arduino-builder" />
-    <chmod perm="755" file="linux/work/arduino-builder" />
+    <chmod perm="777" file="linux/work/arduino-builder" />
     <move file="${staging_folder}/arduino-builder-linux64/tools" tofile="linux/work/tools-builder"/>
     <copy todir="linux/work/hardware" overwrite="true">
       <fileset dir="${staging_folder}/arduino-builder-linux64/hardware" includes="*.txt"/>
@@ -995,7 +995,7 @@
       <param name="dest_folder" value="${staging_folder}" />
     </antcall>
     <copy file="windows/liblistSerials-${LIBLISTSERIAL-VERSION}/windows/listSerialsj.dll" todir="windows/work/lib/" />
-    <chmod perm="755" file="windows/work/lib/listSerialsj.dll" />
+    <chmod perm="777" file="windows/work/lib/listSerialsj.dll" />
 
     <delete dir="${staging_folder}/arduino-builder-windows" includeemptydirs="true"/>
     <mkdir dir="${staging_folder}/arduino-builder-windows"/>
@@ -1006,9 +1006,9 @@
       <param name="dest_folder" value="${staging_folder}/arduino-builder-windows" />
     </antcall>
     <copy file="${staging_folder}/arduino-builder-windows/arduino-builder.exe" tofile="windows/work/arduino-builder.exe" />
-    <chmod perm="755" file="windows/work/arduino-builder.exe" />
+    <chmod perm="777" file="windows/work/arduino-builder.exe" />
     <move file="${staging_folder}/arduino-builder-windows/tools" tofile="windows/work/tools-builder"/>
-    <chmod perm="755" file="windows/work/tools-builder/ctags/5.8-arduino10/ctags.exe" />
+    <chmod perm="777" file="windows/work/tools-builder/ctags/5.8-arduino10/ctags.exe" />
     <copy todir="windows/work/hardware" overwrite="true">
       <fileset dir="${staging_folder}/arduino-builder-windows/hardware" includes="*.txt"/>
     </copy>
@@ -1036,7 +1036,7 @@
     <copy file="windows/work/arduino.l4j.ini" tofile="windows/work/arduino_debug.l4j.ini" />
 
     <!-- cygwin requires html, dll, and exe to have the +x flag -->
-    <chmod perm="755">
+    <chmod perm="777">
       <fileset dir="windows/work" includes="**/*.html, **/*.dll, **/*.exe" />
     </chmod>
 

@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="System.getPropert" key="selection"/>
+		<item value="JOptionPane.showConfirmDialog" key="selection"/>
 		<list key="findhistory">
+			<item value="pathString"/>
+			<item value="JOptionPane.showConfirmDialog"/>
+			<item value="System.out.println"/>
+			<item value="getFile"/>
+			<item value="copy"/>
 			<item value="System.getPropert"/>
 			<item value="System.getProperty(&quot;java.class.path&quot;)"/>
 			<item value="RemindTask"/>
-			<item value="mfeMonitor"/>
-			<item value="checkUser"/>
-			<item value="HttpEntity"/>
-			<item value="HttpEnt"/>
-			<item value="Http"/>
 		</list>
 		<list key="replacehistory">
 		</list>

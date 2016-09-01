@@ -29,7 +29,7 @@ import org.apache.http.protocol.HTTP;
 
 public class MfeMonitor {
   
-  private final String pathString = System.getProperty("java.io.tmpdir");
+ 
   
   private final String monitorFile = "mfemonitor.txt";
   private final int timer_S = 10;
@@ -88,7 +88,7 @@ public class MfeMonitor {
   
   
   private File getFile() { 
-    return new File(pathString, this.monitorFile);
+    return new File(System.getProperty("java.io.tmpdir"), this.monitorFile);
   }
 
   public boolean checkUser(String name, String passwd) {
