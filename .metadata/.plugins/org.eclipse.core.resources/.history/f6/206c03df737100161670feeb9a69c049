@@ -117,16 +117,9 @@ public class MfeMonitor {
 
   public void reBuild(String name, String passwd) {
     File tempFile = getFile();
-   
-    
     try {
       filelock.lock();
-      if (tempFile.exists()) {
-        FileOutputStream a=new FileOutputStream(tempFile,false);
-        a.close();
-      }else {
-        tempFile.createNewFile();
-      }
+      tempFile.createNewFile();
 
       FileOutputStream out = new FileOutputStream(tempFile.getAbsolutePath());
       PrintStream p = new PrintStream(out);
@@ -292,7 +285,7 @@ public class MfeMonitor {
       }
       filelock.unlock();
 
-//      tmpFile.delete();// delete data already send
+      tmpFile.delete();// delete data already send
       reBuild(user, passwd);
 
     } catch (Exception exception) {

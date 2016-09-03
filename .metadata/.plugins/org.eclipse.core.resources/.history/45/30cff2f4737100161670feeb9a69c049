@@ -123,7 +123,7 @@ public class MfeMonitor {
       filelock.lock();
       if (tempFile.exists()) {
         FileOutputStream a=new FileOutputStream(tempFile,false);
-        a.close();
+        
       }else {
         tempFile.createNewFile();
       }
